@@ -25,7 +25,9 @@ namespace ToDoListWithMigrations
         {
             services.AddEntityFramework()
                     .AddDbContext<ToDoDbContext>(options =>
-                                               options.UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
+                               options
+                                 .UseMySql(
+                                     Configuration["ConnectionStrings:DefaultConnection"]));
         }
 
         public void Configure(IApplicationBuilder app)

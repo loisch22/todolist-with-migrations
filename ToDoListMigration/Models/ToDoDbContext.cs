@@ -11,12 +11,13 @@ namespace ToDoListWithMigrations.Models
         public DbSet<Category> Categories { get; set; }
         public DbSet<Item> Items { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-        {
-            options.UseMySql(@"Server=localhost;Port=8889;database=ToDoListWithMigrations;uid=root;pwd=root;");
-        }
+		protected override void OnConfiguring(DbContextOptionsBuilder options)
+		{
+			options.UseMySql(@"Server=localhost;Port=8889;database=ToDoListWithMigrations;uid=root;pwd=root;");
+		}
 
-        public ToDoDbContext(DbContextOptions<ToDoDbContext> options)
+
+		public ToDoDbContext(DbContextOptions<ToDoDbContext> options)
             :base(options)
         {
         }
