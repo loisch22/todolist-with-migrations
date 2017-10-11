@@ -15,6 +15,7 @@ namespace ToDoListWithMigrations
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
+                .UseStartup<Startup>()
                 .Build();
 
             host.Run();
